@@ -1,0 +1,13 @@
+PRIVILAGE
+
+1) Admin : CRUD User, RU Menu, CRU Meja
+2) Cashier : CRUD Transaksi, Orders
+3) Manager : CRUD Menu, R Transaksi, filter(nama peg,tgl),  Cetak Laporan Pendapatan, R Pegawai
+
+DATABASE
+
+User : idUser, namaUser, username, password, level, status(Aktif/Pasif)
+Transaksi : idTrans, namaPel, meja, total, bayar, status(Lunas/Tertunda)
+Pesan : idPesan, idMenu, idTrans, jumlah, total, status(Dibuat/Dibuat)
+Menu : idMenu, gambar, namaMenu, stok, harga
+Meja : idMeja, status(0/1)
