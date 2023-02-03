@@ -11,3 +11,15 @@ Transaksi : idTrans, namaPel, meja, total, bayar, status(Lunas/Tertunda)
 Pesan : idPesan, idMenu, idTrans, jumlah, total, status(Dibuat/Dibuat)
 Menu : idMenu, gambar, namaMenu, stok, harga
 Meja : idMeja, status(0/1)
+
+
+LOGIN
+
+Admin : - username : Tasya
+	- password : tasya
+
+Manager : - username : ramadhinta
+	  - password : ramadhinta
+
+Kasir : - username : Khoirunnisa
+	- password : nisa

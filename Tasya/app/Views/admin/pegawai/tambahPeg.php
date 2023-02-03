@@ -1,4 +1,4 @@
-<?= $this->include('layout/header') ?>
+<?= $this->include('layout/admin/header') ?>
 <div class="main-panel">
 <div class="content-wrapper">
 <div class="col-md-12 grid-margin stretch-card">
@@ -6,17 +6,12 @@
                   <div class="card-body">
                     <h4 class="card-title">Tambah Pegawai</h4>
                     <p class="card-description"> Isi Data Pegawai </p>
-                    <form class="forms-sample" method="POST" action="<?= base_url('/admin/pegawai/'); ?>">
+                    <form class="forms-sample" method="POST" action="<?= base_url('pegawai/create'); ?>" role="form">
+                    <?= csrf_field(); ?>
                       <div class="form-group row">
                         <label for="namaUser" class="col-sm-3 col-form-label" name="namaUser">Nama Pegawai</label>
                         <div class="col-sm-9">
                           <input type="text" class="form-control" id="namaUser" name="namaUser">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Foto</label>
-                        <div class="col-sm-9">
-                          <input type="email" class="form-control" id="foto" name="foto">
                         </div>
                       </div>
                       <div class="form-group row">
@@ -32,15 +27,24 @@
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Jabatan</label>
+                        <label for="level" class="col-sm-3 col-form-label">Jabatan</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" id="level" name="level">
+                        <select class="form-control" name="level">
+                                <option>Pilih Jabatan</option>
+                                <option>ADMIN</option>
+                                <option>MANAGER</option>
+                                <option>KASIR</option>
+                        </select>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Status</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" id="status" name="status">
+                        <select class="form-control" name="status">
+                                <option>Pilih Status</option>
+                                <option>Aktif</option>
+                                <option>Pasif</option>
+                        </select>
                         </div>
                       </div>
                       <button type="submit" class="btn btn-primary mr-2">Submit</button>

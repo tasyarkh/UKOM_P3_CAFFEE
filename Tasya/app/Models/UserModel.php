@@ -14,7 +14,7 @@ class UserModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ["namaUser", "username", "password", "level", "status"];
 
     // Dates
     protected $useTimestamps = false;
@@ -23,20 +23,43 @@ class UserModel extends Model
     protected $updatedField  = 'updated_at';
     protected $deletedField  = 'deleted_at';
 
-    // Validation
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
+     //method cek untuk proses login
+     public function check($username, $password){
+        return $this->db->table('user')->where(
+            array(
+                'username' => $username,
+                'password' => $password,
+            )
+        )
+        ->get()->getRowArray();
+    }
 
-    // Callbacks
-    protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
-    protected $afterInsert    = [];
-    protected $beforeUpdate   = [];
-    protected $afterUpdate    = [];
-    protected $beforeFind     = [];
-    protected $afterFind      = [];
-    protected $beforeDelete   = [];
-    protected $afterDelete    = [];
+    //membuat user untuk register
+    public function saveUser($data){
+        $query = $this->db->table($this->table)->insert($data);
+        return $query;
+    }
+
+    public function getUser($idUser = false){
+        if($idUser === false){
+            return $this->findAll();
+        } else {
+            return $this->getWhere(['idUser' => $idUser]);
+        }
+    }
+
+    //update pegawai
+    public function updatePeg($data, $idUser)
+    {
+        $query = $this->db->table($this->table)->update($data, array('idUser' => $idUser));
+        return $query;
+    }
+
+    //query builder untuk menampilkan jumlah user
+    public function countUser(){
+        $builder = $this->db->table('user');
+        $query = $builder->countAllResults();
+        return $query;
+    }
+
 }

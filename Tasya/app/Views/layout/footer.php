@@ -1,7 +1,7 @@
 <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
               <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Tasya Ramadhinta Khoirunnisa</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.instagram.com/tasyarkh/" target="_blank">made by </a>Tasyarkh</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href="https://www.instagram.com/tasyarkh/" target="_blank">made by </a>Tasyarkh</span>
             </div>
           </footer>
           </div>
@@ -28,6 +28,7 @@
     <script src="assets/js/todolist.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
+    <script src="assets/js/file-upload.js"></script>
     <script src="assets/js/dashboard.js"></script>
     <!-- End custom js for this page -->
   </body>

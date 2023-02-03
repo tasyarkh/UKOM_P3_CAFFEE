@@ -1,14 +1,32 @@
-<?= $this->include('layout/header') ?>
+<?= $this->include('layout/admin/header') ?>
 <div class="main-panel">
 <div class="content-wrapper">
             <div class="row">
+            <div class="col-sm-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h5>Admin</h5>
+                    <div class="row">
+                      <div class="col-8 col-sm-12 col-xl-8 my-auto">
+                        <div class="d-flex d-sm-block d-md-flex align-items-center">
+                          <h2 class="mb-0">Selamat Datang Admin <span style="color: #E5890A;"><?= session('namaUser'); ?></span></h2>
+                        </div>
+                       
+                      </div>
+                      <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
+                        <i class="icon-lg mdi mdi-human-greeting text-warning ml-auto"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">$12.34</h3>
+                          <h3 class="mb-0">99</h3>
                         
                         </div>
                       </div>
@@ -193,4 +211,18 @@
               </div>
             </div>
           </div>
+          <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+          <script>
+            <?php if (session()->getFlashdata('berhasil')) { ?>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login Berhasil',
+                    text: 'Selamat datang, <?= session('namaUser') ?>',
+                    timer: 3500,
+                    showConfirmButton: false,
+
+                })
+
+            <?php } ?>
+          </script>
 <?= $this->include('layout/footer') ?>
